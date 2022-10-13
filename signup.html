@@ -28,20 +28,20 @@
   <body class="text-center">
 
 <main class="form-signin w-100 m-auto">
-  <form>
+  <form action="/" method="POST">
     <img class="mb-4" src="images/stepheninvests.png" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Sign up for Updates</h1>
 
     <div class="form-floating">
-      <input type="text" class="form-control top" id="floatingFirstName" placeholder="First Name">
+      <input type="text" name="fName" class="form-control top" id="floatingFirstName" placeholder="First Name">
       <label for="floatingFirstName">First Name</label>
     </div>
     <div class="form-floating">
-      <input type="text" class="form-control middle" id="floatingLastName" placeholder="Last Name">
+      <input type="text" name="lName" class="form-control middle" id="floatingLastName" placeholder="Last Name">
       <label for="floatingLastName">Last Name</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control bottom" id="floatingEmail" placeholder="Email">
+      <input type="email" name="email" class="form-control bottom" id="floatingEmail" placeholder="Email">
       <label for="floatingEmail">Email</label>
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Me Up</button>
