@@ -1,0 +1,1 @@
+Creating a newsletter sign up landing page with API integration with Mailchimp that will be used to collect email subscribers for the Stephen Harvey YouTube channel
