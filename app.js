@@ -35,15 +35,21 @@ app.post("/", function(req, res) {
   const jsonData = JSON.stringify(data);
 
 // Mailchimp URL replace X with the number found on the end of your API Key eg. us4, then replace YYYY with your audience ID.
-  const url = "https://usX.api.mailchimp.com/3.0/lists/YYYY";
+  const url = "https://usX.api.mailchimp.com/3.0/lists/XXXX";
 
 // In auth: Change to your name and replace XXXX with your generate API Key.
   const options = {
     method: "POST",
-    auth: "stephen1:XXXX"
+    auth: "name1:XXXX"
   };
 
 const request = https.request(url,options, function(response) {
+
+  if (response.statusCode === 200) {
+    res.sendFile(__dirname + "/success.html");
+  } else {
+    res.sendFile(__dirname + "/failure.html");
+  }
     response.on("data", function(data) {
       console.log(JSON.parse(data));
     });
@@ -52,6 +58,10 @@ const request = https.request(url,options, function(response) {
 request.write(jsonData);
 request.end();
 
+});
+
+app.post("/failure", function(req, res){
+  res.redirect("/");
 });
 
 app.listen(3000, function() {
